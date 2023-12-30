@@ -1,0 +1,25 @@
+TestNG - Testing Next Generation
+
+Cedric Beust - Developer
+
+Annotations (Before/After)
+Integrated class
+Group our testcases
+Dependent Group/Methods
+Parameterization
+Parallel Execution
+Reporting
+
+Annotations
+
+STCM - (Suite Test Class Method)
+
+Before Suite
+Before Test
+Before Class
+Before Method
+Test
+After Method
+After Class
+After Test
+After Suite
