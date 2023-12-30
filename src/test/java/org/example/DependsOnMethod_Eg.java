@@ -5,7 +5,8 @@ import org.testng.annotations.Test;
 
 public class DependsOnMethod_Eg {
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
+        Thread.sleep(5000);
         Assert.assertEquals(10,"100");
     }
 

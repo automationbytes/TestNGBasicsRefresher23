@@ -5,18 +5,20 @@ import org.testng.annotations.Test;
 
 public class Assertions_Eg {
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
+        Thread.sleep(5000);
         Assert.assertEquals(10,10);
     }
 
-    @Test
-    public void test2(){
+    @Test(groups = {"Regression"})
+    public void test2() throws InterruptedException {
+        Thread.sleep(5000);
         Assert.assertEquals(10,9);
     }
 
 
 
-    @Test
+    @Test(groups = {"Regression"})
     public void test3(){
         Assert.assertNotEquals(10,9);
     }
