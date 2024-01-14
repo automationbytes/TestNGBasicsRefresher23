@@ -4,24 +4,30 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
-import io.restassured.mapper.ObjectMapper;
 
-public class PostwitPojo {
+public class PutRequest_Eg {
+
     @Test
-    public void PostReq(){
-        POJOResponse pojoReqBdy = new POJOResponse();
-        pojoReqBdy.setDescription("Pojo Class Coffee");
-        pojoReqBdy.setName("POJO Coffee");
+    public void putReq(){
+        String rbody = """
+                {
+                    "description": "Caffe Breve is an updated version.",
+                    "id": 4,
+                    "name": "Breve_Updated"
+                  },
+                """;
+
+        System.out.println(rbody);
 
         RestAssured.baseURI = "http://tosca-webservice-ng.azurewebsites.net";
 
         Response response = RestAssured.given()
                 .contentType(ContentType.JSON)
-
+                //header
                 .and()
-                .body(pojoReqBdy)
+                .body(rbody)
                 .when()
-                .post("/api/Coffees_V4")
+                .put("/api/Coffees_V4")
                 .then()
                 .extract().response();
 
